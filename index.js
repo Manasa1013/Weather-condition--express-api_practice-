@@ -3,7 +3,7 @@ const app = express()
 const bodyParser = require("body-parser")
 const https = require("https")
 // const { urlencoded } = require("body-parser")
-
+app.use(express.static("public"))
 app.use(bodyParser.urlencoded({extended:true}))
 app.get('/',function(req,res){
     console.log("Server started");
@@ -34,6 +34,6 @@ app.post("/", function(req,res){
 })
 
 
-app.listen(3000,function(){
-    console.log("My server started on port 3000");
+app.listen(9000,function(){
+    console.log("My server started on port 9000");
 })
